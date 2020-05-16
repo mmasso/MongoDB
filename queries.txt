@@ -1,0 +1,10 @@
+Inicialitzar : start /b mongod --dbpath "C:\data\db" --logpath "C:\data\logs\mongodb.log"
+Aturar : net stop mongodb
+
+Crear db: use <database name>
+-> Crea documento y colección
+
+db.<tabla>.insertone();
+db.<tabla>.insertmany([]);
+
+db.<tabla>.find([]);
