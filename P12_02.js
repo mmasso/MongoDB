@@ -87,9 +87,9 @@ db.post.aggregate(
     [{
         $lookup: {
             from: "users",
-            localField: "comments._auth_id",
+            localField: "comments._author_id",
             foreignField: "_id",
-            as: "authorData"
+            as: "CommentPerAuthor"
         }
     }]
 )
