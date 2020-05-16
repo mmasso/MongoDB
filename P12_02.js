@@ -92,4 +92,4 @@ db.post.aggregate(
             as: "CommentPerAuthor"
         }
     }]
-)
+).pretty()
