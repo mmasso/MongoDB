@@ -89,7 +89,7 @@ db.post.aggregate(
             from: "users",
             localField: "comments._author_id",
             foreignField: "_id",
-            as: "CommentPerAuthor"
+            as: "AuthorInfo"
         }
     }]
 ).pretty()
