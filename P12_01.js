@@ -1,14 +1,4 @@
-Considering an example of customer schema like this: {
-    "name": "Bob",
-    "surname": "Harris",
-    "age": 47,
-    "hobbies": [
-        { "name": "tennis", "frequency": "1 time per week" },
-        { "name": "jogging", "frequency": "3 times per week" }
-    ]
-}
-
-1. Create a database“ gym” and inside that database a collection named“ customers”.Finally, insert the document above inside the collection.
+// 1. Create a database“ gym” and inside that database a collection named“ customers”.Finally, insert the document above inside the collection.
 
 use gym;
 db.createCollection(customers);
@@ -23,7 +13,7 @@ db.customers.insertone({
 });
 
 
-2. Insert 3 customer records with at least 1 hobby entry per customer.
+//2. Insert 3 customer records with at least 1 hobby entry per customer.
 
 db.customers.insertmany({
     [{
@@ -53,7 +43,7 @@ db.customers.insertmany({
     ]
 });
 
-3. Update the age of Bob Harris to 48.
+//3. Update the age of Bob Harris to 48.
 
 db.customers.updateOne({
     "name": "Bob",
@@ -64,25 +54,26 @@ db.customers.updateOne({
     }
 });
 
-Supongo que con un findOneAndUpdate() funcionaria ? Veo muchos metodos parecidos, pero no acabo de entender sus diferencias.
+//Supongo que con un findOneAndUpdate() funcionaria ? Veo muchos metodos parecidos, pero no acabo de entender sus diferencias.
 
-4. Find all customers who are older than 18.
+//4. Find all customers who are older than 18.
 
 db.customers.find({ "age": { $gt: 18 } });
 
-5. Delete all customers who have tennis as a hobby.
+
+//5. Delete all customers who have tennis as a hobby.
 
 db.customers.deleteMany({
     "hobbies.name": "tennis"
 });
 
-He estado leyendo lo de las collation, y supongo que usandolo, para que te mirara tambien mayusculas y minusculas seria:
+//He estado leyendo lo de las collation, y supongo que usandolo, para que te mirara tambien mayusculas y minusculas seria:
 
 
-    db.customers.deleteMany({
-        "hobbies.name": "tennis"
-    }, {
-        collation: { locale: "en", strength: 1 }
-    });
+db.customers.deleteMany({
+    "hobbies.name": "tennis"
+}, {
+    collation: { locale: "en", strength: 1 }
+});
 
-Source: Academind.
+//Source: Academind.
