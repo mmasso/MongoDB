@@ -8,3 +8,5 @@ db.<tabla>.insertone();
 db.<tabla>.insertmany([]);
 
 db.<tabla>.find([]);
+
+db.<collection>.drop();

@@ -62,34 +62,34 @@ db.createCollection('HighSchools', {
 //Validate the schema of the collection.
 //2.- Using insertOne, insert a single document.
 
-db.post.insertOne({
+db.HighSchools.insertOne({
     _id: "SCH01",
     Name: "IES SINEU",
     Email: "ies.sineu@gmail.com",
     CreationDate: ISODate("1999-01-01"),
     TelephoneNumber: "921542365",
     Address: "Carrer dels aires, 23",
-    Studies: {
+    Studies: [{
         Name: "Informática",
         Description: "Para gente con gafas"
-    }
+    }]
 });
 
 
 //3.- Using insertMany, insert some documents but deliberately insert the same "_id" that the 
 //one in exercise 2 to get an error. Use unordered inserts not to stop the insertions despite that error.
 
-db.post.insertMany([{
+db.HighSchools.insertMany([{
         _id: "SCH02",
         Name: "IES SON MARÇAL",
         Email: "ies.son.marçal@gmail.com",
         CreationDate: ISODate("1982-01-01"),
         TelephoneNumber: "921542895",
         Address: "Carrer dels vents, 24",
-        Studies: {
+        Studies: [{
             Name: "Biologia",
             Description: "Para gente con pelo"
-        }
+        }]
     },
     {
         _id: "SCH01",
@@ -98,10 +98,10 @@ db.post.insertMany([{
         CreationDate: ISODate("1992-01-01"),
         TelephoneNumber: "991542895",
         Address: "Carrer de les bufades, 54",
-        Studies: {
+        Studies: [{
             Name: "Enginyeria",
             Description: "Para gente con oido"
-        }
+        }]
     },
     {
         _id: "SCH03",
@@ -110,9 +110,9 @@ db.post.insertMany([{
         CreationDate: ISODate("1998-01-01"),
         TelephoneNumber: "921112895",
         Address: "Carrer dels tifons, 23",
-        Studies: {
+        Studies: [{
             Name: "Nautica",
             Description: "Para gente con pies"
-        }
+        }]
     }
-], { ordered: false });
+], { ordered: false }).pretty();
