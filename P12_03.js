@@ -40,7 +40,7 @@ db.createCollection('HighSchools', {
                 centralOffice: {
                     bsonType: 'object',
                     required: ['Name', 'Description'],
-                    properties: {
+                    Studies: {
                         Name: {
                             bsonType: 'string',
                             description: 'It is required to be an String!'
