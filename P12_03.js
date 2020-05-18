@@ -69,10 +69,10 @@ db.HighSchools.insertOne({
     CreationDate: ISODate("1999-01-01"),
     TelephoneNumber: "921542365",
     Address: "Carrer dels aires, 23",
-    Studies: [{
+    Studies: {
         Name: "Informática",
         Description: "Para gente con gafas"
-    }]
+    }
 });
 
 
@@ -86,10 +86,10 @@ db.HighSchools.insertMany([{
         CreationDate: ISODate("1982-01-01"),
         TelephoneNumber: "921542895",
         Address: "Carrer dels vents, 24",
-        Studies: [{
+        Studies: {
             Name: "Biologia",
             Description: "Para gente con pelo"
-        }]
+        }
     },
     {
         _id: "SCH01",
@@ -98,10 +98,10 @@ db.HighSchools.insertMany([{
         CreationDate: ISODate("1992-01-01"),
         TelephoneNumber: "991542895",
         Address: "Carrer de les bufades, 54",
-        Studies: [{
+        Studies: {
             Name: "Enginyeria",
             Description: "Para gente con oido"
-        }]
+        }
     },
     {
         _id: "SCH03",
@@ -110,9 +110,9 @@ db.HighSchools.insertMany([{
         CreationDate: ISODate("1998-01-01"),
         TelephoneNumber: "921112895",
         Address: "Carrer dels tifons, 23",
-        Studies: [{
+        Studies: {
             Name: "Nautica",
             Description: "Para gente con pies"
-        }]
+        }
     }
 ], { ordered: false }).pretty();
